@@ -27,6 +27,16 @@ function roots_widgets_init() {
 }
 add_action('widgets_init', 'roots_widgets_init');
 
+function patchworkfarms_widgets_init() {
+  register_sidebar(array(
+		'name'          => __('Homepage Header', 'patchworkfarms'),
+		'id'            => 'sidebar-homepage-header',
+		'before_widget' => '<div class="widget">',
+		'after_widget'  => '</div>',
+	));
+}
+add_action('widgets_init', 'patchworkfarms_widgets_init');
+
 /**
  * Example vCard widget
  */

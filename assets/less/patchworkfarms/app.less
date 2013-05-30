@@ -1,0 +1,229 @@
+@import "./../variables.less";
+
+// Fonts
+// --------------------------------------------------
+
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+
+// Mixins
+// --------------------------------------------------
+
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.handwriting-font () {
+  font-family: 'Amatic SC', cursive;
+}
+
+// Base
+// --------------------------------------------------
+
+body { }
+
+
+// Header
+// --------------------------------------------------
+
+// Front Page
+
+@header-height: 500px;
+
+.banner { }
+
+.jumbotron {
+    img {
+      //top: 0;
+      bottom: 0;
+      left: 0;
+      min-width: 100%;
+      position: absolute;
+    }
+}
+
+.jumbotron-inner {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: @header-height; 
+
+  .brand {
+    display: block;
+    position: relative;
+    width: 50%;
+    margin: @header-height - 360px auto 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: fadeout(@patchwork-green, 21%);
+    .rounded-corners(20px);
+
+    .handwriting-font();
+    font-size: 24px;
+    font-weight: bold;
+
+    img.logo {
+      min-width: 0;
+      width: 80%;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+    }
+
+    nav {
+      padding: 8px 0;
+
+      ul {
+        list-style: none;
+      }
+      
+      li {
+        display: inline;
+        padding-right: 2em;
+      }
+    }
+  }
+}
+
+.navbar.nav-main {
+  margin-bottom: 0;
+  font-size: 36px;
+  .handwriting-font();
+
+  .navbar-inner {
+    background-color: @patchwork-pink;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    text-align: center;
+  }
+
+  .nav,
+  .nav > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+    *zoom:1; /* hasLayout ie7 trigger */
+    vertical-align: top;
+  }
+
+  .nav {
+    margin-bottom: 0;
+    > li {
+      > a {
+        color: #fff;
+        padding: 20px 15px;
+
+        &:hover {
+          // TODO: Some kind of hover style
+        }
+      }    
+    }
+  }
+}
+
+// Styles to make the home page navbar sticky using the jQuery Waypoints
+// plugin
+
+body.home .nav-main.stuck {
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+body.admin-bar.home .nav-main.stuck {
+  top: 28px;
+}
+
+// Content
+// --------------------------------------------------
+
+.content { }
+
+// Primary Content
+// --------------------------------------------------
+
+.main { }
+
+body.home .container {
+  width: 100%;
+}
+
+body.home .main {
+  width: 100%;
+  margin: 0;
+}
+
+.big-map-container {
+  width: 100%;
+  // TODO: responsive style for min-height
+  min-height: 500px;
+  max-height: 965px;
+  position: relative;
+
+  // HACK: Workaround for Wordpress editor inserting empty paragraph
+  p:empty {
+    display: none;
+  }
+}
+
+img.big-map {
+  position: absolute;
+  top: 0;
+  max-width: 100%;
+  display: block;
+}
+
+.map-content {
+  position: relative;
+  margin-top: 100px;
+  padding: 2em;
+  background-color: fadeout(#fff, 21%);
+  .rounded-corners(20px); 
+  z-index: 9998;
+}
+
+
+// Sidebar
+// --------------------------------------------------
+
+.sidebar { }
+
+
+// Posts
+// --------------------------------------------------
+
+.hentry header { }
+.hentry time { }
+.hentry .byline { }
+.hentry .entry-content { }
+.hentry footer { }
+
+
+
+// Footer
+// --------------------------------------------------
+
+.content-info { }
+
+
+// WordPress Generated Classes
+// See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+// --------------------------------------------------
+
+.aligncenter { display: block; margin: 0 auto; }
+.alignleft { float: left; }
+.alignright { float: right; }
+figure.alignnone { margin-left: 0; margin-right: 0; }
+
+
+// Media Queries
+// --------------------------------------------------
+
+@media (max-width: 767px) {
+
+}
