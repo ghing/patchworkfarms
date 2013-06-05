@@ -17,6 +17,10 @@ class Roots_Nav_Walker extends Walker_Nav_Menu {
 
   function start_lvl(&$output, $depth = 0, $args = array()) {
     $output .= "\n<ul class=\"dropdown-menu\">\n";
+		if ($this->repeat_item == TRUE) {
+			$output .= $this->repeat_item_html;
+			$this->repeat_item = FALSE;
+		}
   }
 
   function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
@@ -24,6 +28,13 @@ class Roots_Nav_Walker extends Walker_Nav_Menu {
     parent::start_el($item_html, $item, $depth, $args);
 
     if ($item->is_dropdown && ($depth === 0)) {
+			// Save the top-level dropdown items. We'll append them to the beginning
+			// of the child element. This is a workaround to the disconnect between
+			// how Bootstrap handles dropdowns and how Wordpress renders them. See
+			// https://github.com/retlehs/roots/issues/269 for an extensive
+			// description of this
+			$this->repeat_item = TRUE;
+			$this->repeat_item_html = $item_html;
       $item_html = str_replace('<a', '<a class="dropdown-toggle" data-toggle="dropdown" data-target="#"', $item_html);
       $item_html = str_replace('</a>', ' <b class="caret"></b></a>', $item_html);
     }
