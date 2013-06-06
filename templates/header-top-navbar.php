@@ -7,7 +7,8 @@
         <span class="icon-bar"></span>
       </a>
       <a class="brand" href="<?php echo home_url(); ?>/">
-        <?php bloginfo('name'); ?>
+				<img src="<?php bloginfo('template_directory'); ?>/assets/img/basil-white-32x32.png " alt="basil" />
+				<img src="<?php bloginfo('template_directory'); ?>/assets/img/logo-white-171x32.png " class="logo" alt="<?php bloginfo('name'); ?>" />
       </a>
       <nav class="nav-main nav-collapse collapse" role="navigation">
         <?php
