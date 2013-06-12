@@ -26,10 +26,8 @@
 
 body { }
 
-body.page {
-  h1 {
-    .handwriting-font();
-  }
+h1 {
+  .handwriting-font();
 }
 
 // Header
@@ -248,7 +246,16 @@ img.big-map {
 // Sidebar
 // --------------------------------------------------
 
+@patchwork-sidebar-color: @patchwork-yellow;
+
 .sidebar {
+  margin-top: 2em; 
+  background-color: @patchwork-sidebar-color;
+
+  section {
+    padding: 1em;
+  }
+  
   h2, h3 {
     .handwriting-font();
   }
