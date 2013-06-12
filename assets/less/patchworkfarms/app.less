@@ -252,6 +252,8 @@ img.big-map {
   margin-top: 2em; 
   background-color: @patchwork-sidebar-color;
 
+  // Add additional selectors for other things inside
+  // sidebar
   section {
     padding: 1em;
   }
@@ -284,8 +286,21 @@ img.big-map {
 // --------------------------------------------------
 
 .aligncenter { display: block; margin: 0 auto; }
-.alignleft { float: left; }
+
+.alignleft { 
+  float: left; 
+}
+
+img.alignleft {
+  margin: 1em 1em 1em 0;
+}
+
 .alignright { float: right; }
+
+img.alignright {
+  margin: 1em 0 1em 1em;
+}
+
 figure.alignnone { margin-left: 0; margin-right: 0; }
 
 
