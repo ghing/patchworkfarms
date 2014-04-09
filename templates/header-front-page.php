@@ -19,6 +19,7 @@
     </div>
 	<div class="jumbotron-inner">
 		<?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'full'); ?>
+        <div class="brand-wrapper">
 		<div class="brand">
 			<a href="<?php echo home_url(); ?>/"><img src="<?php bloginfo('template_directory'); ?>/assets/img/logo-600.png " class="logo" alt="<?php bloginfo('name'); ?>" /></a>
 			<div class="description"><?php bloginfo('description'); ?></div>
@@ -28,5 +29,6 @@
 			?>
 			<?php endif; ?>
 		</div>
+        </div>
 	</div>
 </header>
