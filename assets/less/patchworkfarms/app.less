@@ -174,21 +174,6 @@ body.home {
   box-shadow: none;
 }
 
-// Styles to make the home page navbar sticky using the jQuery Waypoints
-// plugin
-
-body.home .nav-main.stuck {
-    position: fixed; 
-    top: 0;
-    width: 100%;
-    z-index: 9999;
-}
-
-body.admin-bar.home .nav-main.stuck {
-  top: 28px;
-}
-
-
 // Content
 // --------------------------------------------------
 
@@ -227,33 +212,50 @@ body.home .main {
   margin: 0;
 }
 
+@map-min: 767px;
+
 .big-map-container {
   width: 100%;
-  // TODO: responsive style for min-height
-  min-height: 500px;
-  max-height: 965px;
   position: relative;
 
   // HACK: Workaround for Wordpress editor inserting empty paragraph
   p:empty {
     display: none;
   }
+
+  @media (min-width: @map-min) {
+    display: block;
+    overflow: hidden;
+    min-height: 500px;
+    max-height: 965px;
+  }
 }
 
+// Large map image
 img.big-map {
+  // Hide the map on narrow displays 
+  display: none;
   position: absolute;
   top: 0;
   max-width: 100%;
-  display: block;
+
+  @media (min-width: @map-min) {
+    display: block;
+  }
 }
 
 .map-content {
   position: relative;
-  margin-top: 100px;
   padding: 2em;
-  background-color: fadeout(#fff, 21%);
-  .rounded-corners(20px); 
-  z-index: 9998;
+  background-color: @patchwork-blue;
+
+  @media (min-width: @map-min) {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background-color: fadeout(#fff, 21%);
+    .rounded-corners(20px); 
+    z-index: 9998;
+  }
 }
 
 .page-header {
@@ -334,11 +336,3 @@ img.alignright {
 }
 
 figure.alignnone { margin-left: 0; margin-right: 0; }
-
-
-// Media Queries
-// --------------------------------------------------
-
-@media (max-width: 767px) {
-
-}
