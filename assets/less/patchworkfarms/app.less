@@ -34,7 +34,7 @@ h1 {
 // Front Page
 
 @header-height: 500px;
-@header-height-sm: 250px;
+@header-height-sm: 220px;
 @jumbotron-min: 700px;
 
 body.home {
@@ -86,15 +86,23 @@ body.home {
     .rounded-corners(20px);
 
     .handwriting-font();
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
+
+    @media (min-width: @jumbotron-min) {
+      font-size: 24px;
+    }
 
     img.logo {
       min-width: 0;
-      width: 80%;
+      width: 100%;
       margin: 0 auto;
       display: block;
       position: relative;
+
+      @media (min-width: @jumbotron-min) {
+        width: 80%;
+      }
     }
 
     .description {
@@ -102,6 +110,7 @@ body.home {
 
       @media (min-width: @jumbotron-min) {
         display: block; 
+        padding-top: .3em;
       }
     }
 
@@ -116,7 +125,11 @@ body.home {
       li {
         @media (min-width: @jumbotron-min) {
           display: inline;
-          padding-right: 2em;
+          padding-right: 1em;
+
+          &:last-child {
+            padding-right: 0;
+          }
         }
       }
     }
