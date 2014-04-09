@@ -113,6 +113,18 @@ h1 {
   } 
 }
 
+.home .navbar .nav-main {
+  padding-top: 8px;
+
+  @media (min-width: @navbarCollapseDesktopWidth) {
+    padding-top: 0;
+  }
+}
+
+.jumbotron .navbar-fixed-top {
+  margin-bottom: 0;
+}
+
 .navbar-inner {
   min-height: 32px;
   box-shadow: none;
@@ -130,45 +142,6 @@ h1 {
 .navbar .nav > .active > a:focus {
   box-shadow: none;
 }
-
-body.home .navbar.nav-main {
-  font-size: 36px;
-  margin-bottom: 0;
-
-  .navbar-inner {
-    background-color: @patchwork-pink;
-    background-image: none;
-    border: none;
-    border-radius: 0;
-    text-align: center;
-    min-height: 32px;
-  }
-
-  .nav,
-  .nav > li {
-    float:none;
-    display:inline-block;
-    *display:inline; /* ie7 fix */
-    *zoom:1; /* hasLayout ie7 trigger */
-    vertical-align: top;
-    line-height: 20px;
-  }
-
-  .nav {
-    margin-bottom: 0;
-    > li {
-      > a {
-        color: #fff;
-        padding: 20px 15px;
-
-        &:hover {
-          // TODO: Some kind of hover style
-        }
-      }    
-    }
-  }
-}
-
 
 // Styles to make the home page navbar sticky using the jQuery Waypoints
 // plugin
@@ -214,7 +187,7 @@ article.post {
 
 .main { }
 
-body.home .container {
+body.home > .container {
   width: 100%;
 }
 

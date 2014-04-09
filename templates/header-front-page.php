@@ -1,13 +1,22 @@
 <header class="container banner jumbotron" role="banner">
-	<nav class="navbar nav-main" role="navigation">
-        <div class="navbar-inner">
-			<?php
-				if (has_nav_menu('primary_navigation')) :
-					wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav'));
-				endif;
-			?>
-        </div>
-	</nav>
+    <div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+    <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <nav class="nav-main nav-collapse collapse" role="navigation">
+            <?php
+            if (has_nav_menu('primary_navigation')) :
+              wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav'));
+            endif;
+            ?>
+      </nav>
+    </div>
+    </div>
+    </div>
 	<div class="jumbotron-inner">
 		<?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'full'); ?>
 		<div class="brand">
