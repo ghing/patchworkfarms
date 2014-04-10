@@ -229,40 +229,84 @@ body.home .main {
 
 @map-min: 767px;
 
+#hours-location {
+  background-color: black;
+
+  h2:first-child {
+    color: #fff;
+    padding-left: 20px;
+
+    @media (min-width: 400px) {
+      float: left;
+    }
+  }
+}
+
 .nav-locations {
-  h2 {
-    float: left;
+  padding-left: 10px;
+
+  @media (min-width: 400px) {
+    padding-left: 0px;
   }
 
   .nav {
     float: left;
     padding-left: 10px;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 10px;
+
+    @media (min-width: 400px) {
+      padding-top: 14px;
+      padding-bottom: 0px;
+    }
 
     li {
-      padding-top: 10px;
+      a {
+        color: @patchwork-blue;
+
+        &:hover {
+          color: #000;
+        }
+      }
+
+      &.active {
+        a {
+          background-color: @patchwork-yellow;
+          color: #000;
+        }
+      }
     }
   }
 }
 
+.location,
 .big-map-container {
   width: 100%;
   position: relative;
+  display: none;
+
+  &.first {
+    display: block;
+  }
+
+  @media (min-width: @map-min) {
+    overflow: hidden;
+    min-height: 500px;
+    max-height: 965px;
+  }
 
   // HACK: Workaround for Wordpress editor inserting empty paragraph
   p:empty {
     display: none;
   }
-
-  @media (min-width: @map-min) {
-    display: block;
-    overflow: hidden;
-    min-height: 500px;
-    max-height: 965px;
-  }
 }
 
-// Large map image
-img.big-map {
+.no-js .location {
+  display: block;
+}
+
+img.background {
   // Hide the map on narrow displays 
   display: none;
   position: absolute;

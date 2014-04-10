@@ -3,13 +3,14 @@
     var $el = this;
 
     var defaults = {
-      locationLink: '.nav-locations a',
+      locationLink: 'nav a',
       locations: '.location'
     };
 
     var settings = $.extend({}, defaults, opts);
 
     if (action === "locations") {
+      $el.find(settings.locationLink).first().parent().addClass('active');
       $el.find(settings.locationLink).click(function(evt) {
         var $this = $(this);
         var sel = $this.attr('href');
@@ -25,6 +26,6 @@
   };
 
   $(function() {
-    $('.home').patchworkfarms('locations');
+    $('#hours-location').patchworkfarms('locations');
   });
 })(window, jQuery);

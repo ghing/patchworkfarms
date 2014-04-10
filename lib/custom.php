@@ -86,7 +86,7 @@ function patchworkfarms_location_fields_box_save($post_id) {
 }
 
 function patchworkfarms_scripts() {
-  wp_register_script('patchwork_locations', get_template_directory_uri() . '/assets/js/jquery.patchwork-locations.js', array('jquery'), null, true);
-  wp_enqueue_script('patchwork_locations');
+  wp_register_script('patchwork', get_template_directory_uri() . '/assets/js/jquery.patchwork.js', array('jquery'), null, true);
+  wp_enqueue_script('patchwork');
 }
 add_action('wp_enqueue_scripts', 'patchworkfarms_scripts', 101);
