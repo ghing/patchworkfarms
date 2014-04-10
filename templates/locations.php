@@ -35,11 +35,14 @@ $locations = new WP_Query($args);
           <?php the_content(); ?>
       </div>
       <!-- <img class="big-map" src="<?php echo get_post_meta($post->ID, 'map_image', true); ?>"> -->
-    <?php 
-    the_post_thumbnail('full', array(
-        'class' => 'background',
-    )); 
-    ?>
+      <?php 
+      the_post_thumbnail('full', array(
+          'class' => 'background',
+      )); 
+      $thumb = get_post(get_post_thumbnail_id($post->ID));
+      ?>
+      <div class="img-description"><?php echo $thumb->post_content; ?></div>
+    
     </div>
     <?php $first = false; ?>
     <?php endwhile; ?>

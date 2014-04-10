@@ -318,6 +318,20 @@ img.background {
   }
 }
 
+.img-description {
+  display: none;
+
+  @media (min-width: @map-min) {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    color: #fff;
+    background-color: fadeout(#000, 21%); 
+  }
+}
+
 .map-content {
   position: relative;
   padding: 2em;
