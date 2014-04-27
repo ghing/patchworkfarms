@@ -21,6 +21,11 @@
   font-family: 'Amatic SC', cursive;
 }
 
+.nowrap () {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 // Base
 // --------------------------------------------------
 
@@ -360,19 +365,22 @@ img.background {
 
 @patchwork-sidebar-color: @patchwork-yellow;
 
+
 .sidebar {
   margin-top: 2em; 
   margin-bottom: 2em;
   background-color: @patchwork-sidebar-color;
 
-  // Add additional selectors for other things inside
-  // sidebar
   section {
     padding: 1em;
   }
   
   h2, h3 {
     .handwriting-font();
+  }
+
+  a {
+    .nowrap();
   }
 
   .widget-inner h3 {
@@ -383,8 +391,13 @@ img.background {
     text-align: center;
   }
 
-  .form-search {
-    margin: 0;
+  .searchform {
+
+    input#s {
+      @media (max-width: 980px) {
+        max-width: 90%;
+      }
+    }
   }
 }
 
