@@ -359,6 +359,25 @@ img.background {
   padding-bottom: 0;
 }
 
+// Thumbnails 
+// --------------------------------------------------
+
+@media (max-width: 767px) {
+  .thumbnail {
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
+
+  a.thumbnail {
+    &:hover, :focus {
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+    }
+  }
+}
 
 // Sidebar
 // --------------------------------------------------
