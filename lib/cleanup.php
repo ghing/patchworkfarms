@@ -474,7 +474,6 @@ add_filter('request', 'roots_request_filter');
  * Tell WordPress to use searchform.php from the templates/ directory
  */
 function roots_get_search_form($argument) {
-  error_log($argument);
   locate_template('/templates/searchform.php', true, false);
   return '';
 }
