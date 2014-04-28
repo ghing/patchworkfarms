@@ -365,6 +365,25 @@ img.background {
 
 @patchwork-sidebar-color: @patchwork-yellow;
 
+.form-search {
+  .input-append {
+    .search-query {
+      -webkit-border-radius: 4px 0 0 4px;
+      -moz-border-radius: 4px 0 0 4px;
+      -ms-border-radius: 4px 0 0 4px;
+      -o-border-radius: 4px 0 0 4px;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .btn {
+      -webkit-border-radius: 0 4px 4px 0;
+      -moz-border-radius: 0 4px 4px 0;
+      -ms-border-radius: 0 4px 4px 0;
+      -o-border-radius: 0 4px 4px 0;
+      border-radius: 0 4px 4px 0;
+    }
+  }
+}
 
 .sidebar {
   margin-top: 2em; 
@@ -387,15 +406,12 @@ img.background {
     margin-top: 0;
   }
 
-  .widget_search {
-    text-align: center;
-  }
-
-  .searchform {
+  .form-search {
+    margin-bottom: 0;
 
     input#s {
-      @media (max-width: 980px) {
-        max-width: 90%;
+      @media (min-width: 761px) and (max-width: 980px) {
+        max-width: 60%;
       }
     }
   }
