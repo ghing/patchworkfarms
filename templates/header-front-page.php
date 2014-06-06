@@ -17,6 +17,9 @@
     </div>
     </div>
     </div>
+    <?php if (defined('PATCHWORKFARMS_TEMP_BANNER_MSG')): ?>
+    <div id="temp-banner" class="container"><?php echo(PATCHWORKFARMS_TEMP_BANNER_MSG); ?></div>
+    <?php endif; ?>
 	<div class="jumbotron-inner">
 		<?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'full'); ?>
         <div class="brand-wrapper">
@@ -30,5 +33,6 @@
 			<?php endif; ?>
 		</div>
         </div>
+
 	</div>
 </header>
